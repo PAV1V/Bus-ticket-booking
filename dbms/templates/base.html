@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{url_for('static', filename='format.css')}}" />
+    <title>Bus Reservation</title>
+</head>
+<body>
+    <div id="header"> Bus Reservation System </div>
+    <p align = "center">Welcome to the Bus Reservation System</p>
+    <p style="text-align:center">
+        <a href="{{url_for('index')}}">Search</a>
+        <a href="{{url_for('update')}}">Update</a>
+    </p>
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

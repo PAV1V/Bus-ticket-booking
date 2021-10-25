@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<p align = "center">
+    Bus Details<br>
+    {% for bus in busd %}
+        Bus ID: {{ bus[0] }}<br>
+        To: {{ bus[1].title() }}<br>
+        From: {{ bus[1].title() }}<br>
+        Cost: {{ bus[3] }}<br>
+        Rating: {{ bus[4] }}<br>
+        Depature: {{ bus[5] }}<br>
+        Arrival: {{ bus[6] }}<br>
+    {% endfor %}
+    <form action="{{url_for('booked')}}" method="POST">
+        Enter your name:
+        <input type = "text" name = "name" size = 15><br>
+        Enter your Phone Number:
+        <input type = "text" name = "phno" size = 15><br>
+        Enter your email:
+        <input type = "email" name = "email" size = 15><br>
+        Enter the number of passengers:
+        <input type = "text" name = "passengers" size = 5><br>
+        Enter your date of departure:
+        <input type = "date" name = "date" size = 15><br>
+
+        <input type = "submit" name = "submit">
+    </form>
+
+</p>
+
+{% endblock %}
